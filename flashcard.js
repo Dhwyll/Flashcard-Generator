@@ -1,5 +1,6 @@
 var BasicCard = require("./BasicCard.js");
 var ClozeCard = require("./ClozeCard.js");
+var PlayGame = require("./PlayGame");
 var inquirer = require("inquirer");
 
 var cardArray = [];
@@ -14,6 +15,7 @@ var makeCards = function() {
 			choices: ["Basic Card", "Cloze Card"]
 		}
 	]).then(function(answers){
+		console.log("");
 		if (answers.type === "Basic Card") {
 			inquirer.prompt([
 				{
@@ -40,10 +42,12 @@ var makeCards = function() {
 					}
 				]).then(function(answers){
 					if(answers.another) {
+						console.log("");
 						makeCards();
 					}
 						else {
-							console.log(cardArray);
+							console.log("\nTime to test your knowledge!\n");
+							PlayGame(cardArray);
 						}
 				});
 			});
@@ -77,10 +81,12 @@ var makeCards = function() {
 						}
 					]).then(function(answers){
 						if(answers.another) {
+							console.log("");
 							makeCards();
 						}
 							else {
-								console.log(cardArray);
+								console.log("\nTime to test your knowledge!\n");
+								PlayGame(cardArray);
 							}
 					});
 				});
