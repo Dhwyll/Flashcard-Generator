@@ -3,6 +3,8 @@ A project to practice using constructors (and possibly secondary require files)
 
 This program simulates a flashcard educational program.
 
+To run the program, make sure to npm install in order to pick up inquirer.  Then, node flashcard.js.
+
 There is a file, BasicCard.js, which holds a constructor to create a simple flashcard.  A basic flashcard has a "front," which contains a question, and a back, which contains the answer.  The constructor takes in two arguments, the front and the back, and returns a card that has those two items.
 
 There is a file, ClozeCard.js, which holds a constructor to create a more complex flashcard.  A cloze flashcard contains a statement, the cloze, and the cloze-deleted statement.  The constructor takes two arguments, the statement and the cloze, and returns a card that has the statement, the cloze, and the cloze-deleted statement.
